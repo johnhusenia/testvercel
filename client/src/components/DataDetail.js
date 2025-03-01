@@ -9,7 +9,7 @@ const DataDetail = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/data/${id}`)
+        axios.get(`https://testvercel-drab-alpha.vercel.app/api/data/${id}`)
             .then(response => {
                 setData(response.data);  
             })

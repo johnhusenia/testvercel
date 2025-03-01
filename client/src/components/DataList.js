@@ -12,8 +12,8 @@ const DataList = () => {
     useEffect(() => {
 
         Promise.all([
-            axios.get('http://localhost:5000/api/movies'),
-            axios.get('http://localhost:5000/api/series')
+            axios.get('https://testvercel-drab-alpha.vercel.app/api/movies'),
+            axios.get('https://testvercel-drab-alpha.vercel.app/api/series')
         ])
         .then(([moviesResponse, seriesResponse]) => {
             setMovies(moviesResponse.data); 
