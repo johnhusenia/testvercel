@@ -1,53 +1,25 @@
-const fs = require('fs');
-const path = require('path');
+const data = require('../data/movie.json'); // Import the JSON file directly
 
 class DataHandler {
-    constructor(filePath) {
-        this.filePath = filePath;
-    }
-
-    // Helper function to read the file
-    readData() {
-        return new Promise((resolve, reject) => {
-            // Resolving the file path dynamically based on the deployment environment
-            const absolutePath = path.join(__dirname, this.filePath);
-
-            fs.readFile(absolutePath, 'utf8', (err, data) => {
-                if (err) {
-                    return reject('Error reading file: ' + err);
-                }
-
-                try {
-                    const jsonData = JSON.parse(data);
-                    resolve(jsonData);
-                } catch (error) {
-                    reject('Error parsing JSON: ' + error);
-                }
-            });
-        });
+    constructor() {
+        this.data = data; // Use the imported data
     }
 
     getMovies() {
-        return this.readData().then(data => {
-            return data.filter(item => item.category === 'movie');
-        });
+        return Promise.resolve(this.data.filter(item => item.category === 'movie'));
     }
 
     getSeries() {
-        return this.readData().then(data => {
-            return data.filter(item => item.category === 'series');
-        });
+        return Promise.resolve(this.data.filter(item => item.category === 'series'));
     }
 
     getItemByID(seriesId) {
-        return this.readData().then(data => {
-            const series = data.find(item => item._id === seriesId);
-            if (series) {
-                return series;
-            } else {
-                return Promise.reject('Data not found with ID: ' + seriesId);
-            }
-        });
+        const series = this.data.find(item => item._id === seriesId);
+        if (series) {
+            return Promise.resolve(series);
+        } else {
+            return Promise.reject('Data not found with ID: ' + seriesId);
+        }
     }
 }
 

@@ -1,23 +1,48 @@
-// Importing express
 const express = require('express');
+const cors = require('cors');
+const DataHandler = require('./modules/movie');
 
-// Initialize the express app
 const app = express();
+const port = process.env.PORT || 5000; // Use environment variable for port
 
-// Set the port for the server
-const PORT = process.env.PORT || 5000;
+app.use(cors());
+const dataHandler = new DataHandler(); // No file path needed
 
-// Sample route to test the server
-app.get('/', (req, res) => {
-  res.send('Hello from the backend!');
+app.get('/api/movies', async (req, res) => {
+    try {
+        const movies = await dataHandler.getMovies();
+        res.json(movies);
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+        res.status(500).json({ error: error.message });
+    }
 });
 
-// Example of an API route
-app.get('/api', (req, res) => {
-  res.json({ message: 'Welcome to the API!' });
+app.get('/api/series', async (req, res) => {
+    try {
+        const series = await dataHandler.getSeries();
+        res.json(series);
+    } catch (error) {
+        console.error('Error fetching series:', error);
+        res.status(500).json({ error: error.message });
+    }
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get('/api/data/:id', async (req, res) => {
+    const movieId = req.params.id;
+    try {
+        const movie = await dataHandler.getItemByID(movieId);
+        if (movie) {
+            res.json(movie);
+        } else {
+            res.status(404).json({ error: 'Movie not found' });
+        }
+    } catch (error) {
+        console.error('Error fetching movie by ID:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
 });
