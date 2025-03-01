@@ -38,6 +38,15 @@ const Sidenav = () => {
             transition: "width 0.3s ease", // Smooth transition when toggling
           },
           display: { xs: "none", sm: "block" }, // Hide sidebar on small screens by default
+          "@media (max-width: 600px)": {
+            // Handling for portrait mode, mobile
+            position: "absolute", // Position fixed in portrait mode
+            top: 0,
+            left: open ? 0 : "-100%", // Slide in/out effect when open/close
+            height: "100vh",
+            transition: "left 0.3s ease",
+            zIndex: 1200,
+          },
         }}
       >
         <div className="sidebar-header">
