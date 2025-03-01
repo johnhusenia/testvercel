@@ -8,6 +8,10 @@ const port = 5000;
 app.use(cors());
 const dataHandler = new DataHandler('../data/movie.json');
 
+app.get('/', (req, res) => {
+  res.send('Hello from the backend!');
+});
+
 app.get('/api/movies', async (req, res) => {
     const filePath = '../data/movie.json'; 
 
