@@ -6,9 +6,11 @@ class DataHandler {
         this.filePath = filePath;
     }
 
+    // Helper function to read the file
     readData() {
         return new Promise((resolve, reject) => {
-            const absolutePath = path.resolve(__dirname, this.filePath);
+            // Resolving the file path dynamically based on the deployment environment
+            const absolutePath = path.join(__dirname, this.filePath);
 
             fs.readFile(absolutePath, 'utf8', (err, data) => {
                 if (err) {
@@ -43,7 +45,7 @@ class DataHandler {
             if (series) {
                 return series;
             } else {
-                return Promise.reject('Data not found with ID: ' + seriesId); 
+                return Promise.reject('Data not found with ID: ' + seriesId);
             }
         });
     }
