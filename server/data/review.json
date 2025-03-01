@@ -1,0 +1,43 @@
+[
+    {
+      "_id": "review001",
+      "movieId": "movie001",
+      "userId": "user001",
+      "rating": 9,
+      "comment": "A mind-bending experience with stunning visuals!",
+      "createdAt": "2025-02-18T10:00:00Z"
+    },
+    {
+      "_id": "review002",
+      "movieId": "movie002",
+      "userId": "user002",
+      "rating": 10,
+      "comment": "A masterpiece! Nolan's best work.",
+      "createdAt": "2025-02-18T11:00:00Z"
+    },
+    {
+      "_id": "review003",
+      "movieId": "movie003",
+      "userId": "user003",
+      "rating": 8,
+      "comment": "Iconic dialogues and unforgettable characters.",
+      "createdAt": "2025-02-18T12:00:00Z"
+    },
+    {
+      "_id": "review004",
+      "movieId": "movie004",
+      "userId": "user004",
+      "rating": 10,
+      "comment": "Heath Ledger's Joker is legendary. Must watch!",
+      "createdAt": "2025-02-18T13:00:00Z"
+    },
+    {
+      "_id": "review005",
+      "movieId": "movie005",
+      "userId": "user005",
+      "rating": 9,
+      "comment": "Visuals like never before. A true cinematic experience.",
+      "createdAt": "2025-02-18T14:00:00Z"
+    }
+  ]
+  
