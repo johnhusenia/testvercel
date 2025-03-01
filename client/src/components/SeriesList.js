@@ -50,12 +50,12 @@ const SeriesList = () => {
 
             {tabIndex === 1 && (
                 <div>
-                    <GenreList data={movies} category={"Movies"} />
+                    <GenreList data={movies} category={"Series"} />
                 </div>
             )}
             {tabIndex === 0 && (
                 <div>
-                    <MovieDisplay data={movies} setContent={setMovies} category={"Movies"} />
+                    <MovieDisplay data={movies} setContent={setMovies} category={"Series"} />
                 </div>
             )}
         </div>

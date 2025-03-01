@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DisplayList from './DisplayList'; // Import MovieDisplay
+import DisplayList from './DisplayList';
 import Sidenav from './Sidenav';
 import Footer from './Footer';
 
@@ -26,6 +26,9 @@ const DataList = () => {
         });
     }, []);
 
+    if (error) {
+        return <div>{error}</div>;
+    }
 
     return (
         <div style={{ display: 'flex' }}>

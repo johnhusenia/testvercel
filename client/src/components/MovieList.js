@@ -25,6 +25,7 @@ const MovieList = () => {
     if (error) {
         return <div>{error}</div>;
     }
+    
     const handleTabChange = (event, newIndex) => {
         setTabIndex(newIndex);
     };

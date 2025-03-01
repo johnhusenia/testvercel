@@ -348,7 +348,7 @@ footer {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   /* Adjusting popup content */
   .popup-content {
     width: 80%;  /* Ensure the popup is responsive on smaller screens */
@@ -377,5 +377,64 @@ footer {
   .main-content {
     margin-left: 0; 
     width: 100%;
+  }
+
+  .logo {
+    font-size: 30px; /* Smaller logo for mobile */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .left-container, .right-container {
+    width: 100%; /* Make both containers take full width on mobile */
+    padding: 10px; /* Add padding */
+  }
+
+  .left-container {
+    background-color: #f9f9f9; /* Lighter background for phone */
+  }
+
+  .right-container {
+    color: black; /* Change text color to black on mobile for contrast */
+  }
+  .sidenav .MuiDrawer-paper {
+    width: 250px; /* Narrower sidebar for phones */
+    padding: 10px; /* Add some padding */
+  }
+
+  .sidebar-header h1 {
+    font-size: 1.2rem; /* Smaller font size for header */
+  }
+
+  .sidenav-item {
+    padding: 10px 0; /* Adjust padding for smaller items */
+  }
+
+  .sidenav .MuiListItemButton-root {
+    font-size: 0.9rem; /* Smaller font size for list items */
+  }
+
+  .sidenav .MuiListItemButton-root:hover {
+    background-color: #4c4c4c !important; /* Lighter hover background for better mobile contrast */
+  }
+
+  .image-background {
+    background-size: cover; /* Adjust image size for mobile */
+    height: 60vh; /* Adjust height of image for mobile */
+    font-size: 18px; /* Smaller font size */
+  }
+
+  .top-navbar {
+    height: 15vh; /* Reduce navbar height on small screens */
+  }
+
+  .nav-buttons {
+    top: 10px; /* Reduce the distance from the top */
+    right: 10px; /* Reduce the distance from the right */
+    gap: 15px; /* Smaller gap between buttons */
+  }
+
+  .nav-buttons button {
+    padding: 8px 16px; /* Smaller button padding */
+    font-size: 12px; /* Smaller font size */
   }
 }

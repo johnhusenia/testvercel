@@ -3,10 +3,10 @@ const cors = require('cors');
 const DataHandler = require('./modules/movie');
 
 const app = express();
-const port = process.env.PORT || 5000; // Use environment variable for port
+const port = process.env.PORT || 5000; 
 
 app.use(cors());
-const dataHandler = new DataHandler(); // No file path needed
+const dataHandler = new DataHandler(); 
 
 app.get('/api/movies', async (req, res) => {
     try {
