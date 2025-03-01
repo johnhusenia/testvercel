@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  
+import MovieList from './components/MovieList';  
+import SeriesList from './components/SeriesList';  
+import DataList from './components/DataList';  
+import DataDetail from './components/DataDetail';  
+import HomePage from './components/HomePage';  
 import './App.css';
+<link href="https://fonts.googleapis.com/css2?family=Museo:wght@300;400;700&display=swap" rel="stylesheet" />
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+       
+          <Route path="/data/:id" element={<DataDetail />} />  
+          <Route path="/movies" element={<MovieList />} />  
+          <Route path="/series" element={<SeriesList />} />  
+          <Route path="/user" element={<DataList />} />  
+          <Route path="/" element={<HomePage />} />  
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

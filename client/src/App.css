@@ -1,38 +1,381 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movie-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  width: 150px;  /* Fixed width */
+  height: auto; /* Height adjusts based on content */
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.movie-item img {
+  width: 100px;
+  height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.movie-item span {
+  margin-top: 8px;
+  display: block; /* Ensure the title wraps to a new line */
+  word-wrap: break-word; /* Allow the text to wrap within the container */
+  overflow-wrap: break-word; /* Allow the text to break and wrap */
+  word-break: break-word; /* Break words to prevent overflow */
+}
+
+.movie-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.movie-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Genre List Styles */
+.genre-container {
+  margin-bottom: 20px;
+}
+
+.genre-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.genre-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+}
+
+.movie-item.genre {
+  min-width: 150px;
+}
+
+.movie-item.genre img {
+  width: 150px;
+  height: 225px;
+  border-radius: 8px;
+}
+
+/* Movie Display Styles */
+.button-container {
+  margin-bottom: 20px;
+}
+
+.sort-buttons {
+  margin-bottom: 10px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style-type: none; /* Removes bullets */
+  padding: 0; /* Remove default padding */
+  align-items: center;      /* Centers vertically */
+}
+
+.movie-item.movie-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.movie-item.movie-display img {
+  width: 100px;
+  height: 150px;
+  border-radius: 4px;
+}
+
+.movie-list .more-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #707070; 
+  border-radius: 5px;      
+  height: 50%;
+}
+
+.movie-list .more-text p {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 0;  
+  margin: 0;   
+}
+
+.sidenav .MuiDrawer-paper {
+  background-color: #111;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sidenav .MuiListItemButton-root {
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sidenav .MuiListItemButton-root:hover {
+  background-color: #575757 !important; 
+  color: #fff !important;
+}
+
+.sidebar-header {
+  margin-bottom: 20px;  
+}
+
+.sidebar-header h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+}
+
+.sidenav-item {
+  width: 100%;
+  text-align: center !important; 
+}
+
+.main-content {
+  padding: 20px;
+  width: calc(100% - 240px);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Footer*/
+.footer {
+  background-color: #111;
+  color: white;
+  padding: 40px 0;
+  width: 100%;  
+  position: relative;
+  bottom: 0;    
+  left: 0;      
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-title {
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 8px;
+}
+
+.footer-menu a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #ff9900; 
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: white;
+}
+
+.social-links a:hover {
+  color: #ff9900;
+}
+
+/* Image Background */
+.image-background {
+  flex: 1;
+  background-image: url('./stuff/fri7.png'); /* No import needed */
+  background-size: 100% auto; /* Fit the height while keeping the width centered */
+  background-position: center; /* Center the image horizontally */
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+}
+
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background: transparent;
+}
+
+.nav-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-buttons button {
+  padding: 10px 20px;
+  background: transparent;
+  color: white;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Museo', sans-serif;
+  outline: none; 
+  font-size: 15px;
+}
+
+.nav-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.logo {
+  padding: 15px 30px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Museo', sans-serif;
+}
+
+.left-container {
+  width: 45%;
+  background-color: #f0f0f0; /* Light gray background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.right-container {
+  flex: 1; /* Takes full right side */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Container for the button to trigger popup */
+.open-popup-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup Content Box */
+.popup-content {
+  background-color: rgba(69, 68, 68, 0.6); /* Translucent white background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  max-width: 90%; /* Make it responsive */
+}
+
+/* Inputs and labels */
+.popup-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup-content button:hover {
+  background-color: #45a049;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  /* Adjusting popup content */
+  .popup-content {
+    width: 80%;  /* Ensure the popup is responsive on smaller screens */
+    padding: 20px; /* Reduced padding for better fit on small screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .open-popup-btn {
+    width: 100%;  /* Make the button full-width on mobile */
+    font-size: 14px; /* Smaller font for mobile */
+  }
+
+  .popup-content input,
+  .popup-content button {
+    font-size: 14px; /* Adjust font size for mobile inputs */
+  }
+
+  /* Footer adjustments */
+  .footer {
+    padding: 20px;
+  }
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  /* Main content responsiveness */
+  .main-content {
+    margin-left: 0; 
+    width: 100%;
   }
 }
