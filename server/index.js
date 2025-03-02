@@ -43,6 +43,23 @@ app.get('/api/data/:id', async (req, res) => {
     }
 });
 
+app.get('/api/data/genre/:genre', async (req, res) => {
+    const genre = req.params.genre;
+
+    try {
+        const movies = await dataHandler.getItemsByGenre(genre);
+        if (movies.length > 0) {
+            res.json(movies);
+        } else {
+            res.status(404).json({ error: 'No movies found for this genre' });
+        }
+    } catch (error) {
+        console.error('Error fetching movies by genre:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });

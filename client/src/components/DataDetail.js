@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Sidenav from './Sidenav';
+import { Box, Container, Typography } from "@mui/material";
+import RelatedData from "./RelatedData";
 
 const DataDetail = () => {
     const { id } = useParams();
@@ -27,45 +29,110 @@ const DataDetail = () => {
         return <div>Loading...</div>;
     }
 
+
     return (
-        <div style={{ display: 'flex' }}>
+        <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+          {/* First Container - 75% height with floating effect */}
+          <Container
+            maxWidth={false}
+            sx={{
+              height: "75vh",
+              backgroundColor: "#121212", // Dark background
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+            }}
+          >
+            {/* Floating Box */}
+            <Box
+              sx={{
+                backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark background with transparency
+                color: "white",
+                padding: 3,
+                borderRadius: 3,
+                boxShadow: "0px 4px 15px rgba(255, 255, 255, 0.2)",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                width: "80%",
+                maxWidth: "1000px",
+                minHeight: "60%",
+                backdropFilter: "blur(10px)",
+              }}
+            >
+
+              <Box
+                component="img"
+                src={data.posterUrl}
+                alt={`${data.title} poster`}
+                sx={{
+                  width: "200px",
+                  height: "auto",
+                  borderRadius: "10px",
+                  boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.2)",
+                }}
+              />
+
+              <Box sx={{ flex: 1, marginLeft: 3 }}>
+                <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                  {data.title} ({data.releaseYear})
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Genre:</strong> {data.genre.join(", ")}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Duration:</strong> {data.duration} minutes
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Language:</strong> {data.language}
+                </Typography>
+                <Typography variant="body2" sx={{ opacity: 0.8 }}>
+                  {data.description}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Director:</strong> {data.director}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Writer(s):</strong> {data.writers.join(", ")}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Release Date:</strong> {data.releaseDate}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Production Company:</strong> {data.productionCompany}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Country:</strong> {data.country}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Budget:</strong> ${data.budget.toLocaleString()}
+                </Typography>
+                {data.boxOffice !== null && (
+                  <Typography variant="body1">
+                    <strong>Box Office:</strong> ${data.boxOffice.toLocaleString()}
+                  </Typography>
+                )}
+              </Box>
+            </Box>
+          </Container>
     
-        <Sidenav />
-    
-    
-        <div className="main-content">
-            <h1>{data.title} ({data.releaseYear})</h1>
-            <img src={data.posterUrl} alt={`${data.title} poster`} />
-            <p><strong>Genre:</strong> {data.genre.join(', ')}</p>
-            <p><strong>Duration:</strong> {data.duration} minutes</p>
-            <p><strong>Language:</strong> {data.language}</p>
-            <p><strong>Description:</strong> {data.description}</p>
-            <p><strong>Director(s):</strong> {data.director}</p>
-            <p><strong>Writer(s):</strong> {data.writers.join(', ')}</p>
-            <h4>Cast:</h4>
-            <ul>
-                {data.cast.map((actor, index) => (
-                    <li key={index}>
-                        <strong>{actor.name}</strong> as <em>{actor.role}</em>
-                    </li>
-                ))}
-            </ul>
-            <p><strong>Release Date:</strong> {data.releaseDate}</p>
-            <p><strong>Production Company:</strong> {data.productionCompany}</p>
-            <p><strong>Country:</strong> {data.country}</p>
-            <p><strong>Budget:</strong> ${data.budget.toLocaleString()}</p>
-            {data.boxOffice !== null && (
-            <p><strong>Box Office:</strong> ${data.boxOffice.toLocaleString()}</p>
-            )}
-            <h4>Awards:</h4>
-            <ul>
-                {data.awards.map((award, index) => (
-                    <li key={index}>{award}</li>
-                ))}
-            </ul>
-        </div>
-        </div>
-    );
+          <Container
+            maxWidth={false}
+            sx={{
+              height: "25vh",
+              backgroundColor: "#1a1a1a",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "white",
+            }}
+          >
+         <RelatedData genre={data.genre} />
+          </Container>
+        </Box>
+      );
 };
 
 export default DataDetail;

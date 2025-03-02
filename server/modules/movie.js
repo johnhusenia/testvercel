@@ -21,6 +21,16 @@ class DataHandler {
             return Promise.reject('Data not found with ID: ' + seriesId);
         }
     }
+
+    getItemsByGenre(genre) {
+        const filteredItems = this.data.filter(item => item.genre.some(genre));
+        
+        if (filteredItems.length > 0) {
+            return Promise.resolve(filteredItems);
+        } else {
+            return Promise.reject('No items found for genre: ' + genre);
+        }
+    }
 }
 
 module.exports = DataHandler;

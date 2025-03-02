@@ -5,6 +5,7 @@ import SeriesList from './components/SeriesList';
 import DataList from './components/DataList';  
 import DataDetail from './components/DataDetail';  
 import HomePage from './components/HomePage';  
+import Layout from './components/Test';  
 import './App.css';
 <link href="https://fonts.googleapis.com/css2?family=Museo:wght@300;400;700&display=swap" rel="stylesheet" />
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/series" element={<SeriesList />} />  
           <Route path="/user" element={<DataList />} />  
           <Route path="/" element={<HomePage />} />  
+          <Route path="/test" element={<Layout />} /> 
         </Routes>
       </div>
     </Router>
