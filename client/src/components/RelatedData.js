@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 const RelatedData = ({ genre }) => {
   const [relatedItems, setRelatedItems] = useState([]);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (genre) {
@@ -29,13 +31,22 @@ const RelatedData = ({ genre }) => {
     return <div>Loading...</div>;
   }
 
+  const handleClick = (itemId) => {
+    console.log(itemId);
+    navigate(`/data/${itemId}`); 
+  };
+
   return (
     <Box className="related-container">
       <Typography className="section-title">Similar {genre} Items</Typography>
       <Box className="horizontal-scroll">
-        {relatedItems.slice(0, 5).map((item, index) => (
-          <Box key={index} className="related-item">
-            <img src={item.imageUrl} alt={item.title} className="related-img" />
+        {relatedItems.slice(0, 10).map((item, index) => (
+            
+          <Box key={index} className="related-item"
+          onClick={() => handleClick(item._id)} 
+          style={{ cursor: 'pointer' }} 
+        >
+            <img src={item.posterUrl} alt={item.title} className="related-img" />
             <Typography className="related-title">{item.title}</Typography>
           </Box>
         ))}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Sidenav from './Sidenav';
+import Sidenav2 from './Sidenav2';
 import { Box, Container, Typography } from "@mui/material";
 import RelatedData from "./RelatedData";
 
@@ -32,11 +32,11 @@ const DataDetail = () => {
 
     return (
         <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-          {/* First Container - 75% height with floating effect */}
+          <Sidenav2 />
           <Container
             maxWidth={false}
             sx={{
-              height: "75vh",
+              height: "65vh",
               backgroundColor: "#121212", // Dark background
               display: "flex",
               alignItems: "center",
@@ -121,7 +121,7 @@ const DataDetail = () => {
           <Container
             maxWidth={false}
             sx={{
-              height: "25vh",
+              height: "35vh",
               backgroundColor: "#1a1a1a",
               display: "flex",
               justifyContent: "center",
