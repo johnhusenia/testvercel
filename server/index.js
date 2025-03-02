@@ -43,18 +43,20 @@ app.get('/api/data/:id', async (req, res) => {
     }
 });
 
-app.get('/api/data/genre/:genre', async (req, res) => {
-    const genre = req.params.genre;
+app.get('/api/data/genre/:genres', async (req, res) => {
+    const genres = req.params.genres;  
+    const genreArray = genres.split(','); 
 
     try {
-        const movies = await dataHandler.getItemsByGenre(genre);
-        if (movies.length > 0) {
-            res.json(movies);
+
+        const filteredData = await dataHandler.getItemsByGenre(genreArray); 
+        if (filteredData.length > 0) {
+            res.json(filteredData); 
         } else {
-            res.status(404).json({ error: 'No movies found for this genre' });
+            res.status(404).json({ error: 'No items found for the given genre(s)' });
         }
     } catch (error) {
-        console.error('Error fetching movies by genre:', error);
+        console.error('Error fetching data by genre:', error);
         res.status(500).json({ error: error.message });
     }
 });

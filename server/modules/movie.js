@@ -22,13 +22,15 @@ class DataHandler {
         }
     }
 
-    getItemsByGenre(genre) {
-        const filteredItems = this.data.filter(item => item.genre.some(genre));
+    getItemsByGenre(genres) {
+        const filteredItems = this.data.filter(item => 
+            genres.some(genre => item.genre.includes(genre))  
+        );
         
         if (filteredItems.length > 0) {
             return Promise.resolve(filteredItems);
         } else {
-            return Promise.reject('No items found for genre: ' + genre);
+            return Promise.reject('No items found for genres: ' + genres.join(', '));
         }
     }
 }
