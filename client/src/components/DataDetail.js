@@ -58,7 +58,7 @@ const DataDetail = () => {
                         position: "absolute",
                         top: 40,
                         left: 16,
-                        color: "white",
+                        color: "rgb(255, 255, 255)",
                     }}
                 >
                     <ArrowBackIcon />

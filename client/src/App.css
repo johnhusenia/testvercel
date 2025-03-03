@@ -41,6 +41,13 @@
   text-decoration: none;
   color: inherit;
 }
+.movie-title {
+  font-size: 16px; /* Adjust as needed */
+  white-space: nowrap; /* Prevents wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." if text overflows */
+}
+
 
 /* Genre List Styles */
 .genre-container {
@@ -106,9 +113,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  list-style-type: none; /* Removes bullets */
-  padding: 0; /* Remove default padding */
-  align-items: center;      /* Centers vertically */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  width: 100%; /* Ensure it does not overflow */
+  overflow-x: hidden;  /* Specifically for movie list to hide overflow */
 }
 
 .movie-item.movie-display {
@@ -129,7 +139,8 @@
   padding: 20px;
   background-color: #707070; 
   border-radius: 5px;      
-  height: 50%;
+  height: 30%;
+  margin-top: 50px;
 }
 
 .movie-list .more-text p {
@@ -181,8 +192,14 @@ li {
 .main-content {
   padding: 20px;
   flex-grow: 1;  /* This allows the main content to take up the remaining space */
-  transition: margin-left 0.3s ease-in-out;
+
 }
+.main-content2 {
+  overflow-x: hidden; /* Prevent horizontal scrolling for this section */
+  width: 100%;         /* Ensure full width */
+  position: relative;  /* Control the layout properly */
+}
+
 
 /* Footer*/
 .footer {
@@ -433,7 +450,7 @@ footer {
   opacity: 0.7;
 }
 
-.advertisement-container {
+.adcot-container {
   max-width: 100%;
   width: 90%;
   margin: auto;
@@ -443,28 +460,29 @@ footer {
   overflow: hidden;
 }
 
-.advertisement-image {
+.adcot-image {
   width: 100%;
   height: auto;
   max-height: 300px;
   object-fit: cover;
 }
 
-.advertisement-content {
+.adcot-details {
   padding: 16px;
   text-align: center;
 }
 
-.advertisement-title {
+.adcot-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-.advertisement-description {
+.adcot-description {
   font-size: 1rem;
-  color: #4a4a4a;
+  color: #555;
 }
+
 
 .white-text {
   color: white !important;
@@ -538,19 +556,18 @@ footer {
   margin-top: 20px;
 }
 
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms;
-}
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit-active {
-  opacity: 0;
-  transition: opacity 500ms;
+
+.slideshow-container {
+  position: relative;  /* Keep the slideshow fixed */
+  top: 0;           /* Position at the top of the page */
+  left: 0;          /* Position at the left edge */
+  width: 100%;      /* Take full width of the viewport */
+  height: 60vh;    /* Take full height of the viewport */
+  z-index: 100;     /* Ensure it stays on top of other content */
+  overflow: hidden; /* Prevent any content from overflowing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Media Queries for Mobile Devices */
@@ -634,6 +651,10 @@ footer {
   .logo {
     font-size: 30px;
     padding: 10px 20px;
+    font-family: 'Helvetica', sans-serif;
+  }
+  .h1, .h2 {
+    font-family: 'Helvetica', sans-serif;
   }
 
   .left-container, .right-container {
@@ -658,19 +679,19 @@ footer {
     height: 60%;
   }
 
-  .advertisement-container {
+  .content-container {
     width: 100%;
   }
 
-  .advertisement-image {
+  .content-image {
     max-height: 200px;
   }
 
-  .advertisement-title {
+  .content-title {
     font-size: 1.2rem;
   }
 
-  .advertisement-description {
+  .content-description {
     font-size: 0.9rem;
   }
 }

@@ -4,6 +4,8 @@ import MovieDisplay from './SortList'; // Import MovieDisplay
 import GenreList from './GenreList'; // Import MovieDisplay
 import { Tabs, Tab, Box } from '@mui/material';
 import Sidenav from './Sidenav2';
+import Footer from './Footer';
+import View from "./View";
 
 const SeriesList = () => {
     const [movies, setMovies] = useState([]);
@@ -41,7 +43,7 @@ const SeriesList = () => {
           <h1>TV Series</h1>
             <Box sx={{ width: '100%' }}>
                 <Tabs value={tabIndex} onChange={handleTabChange} aria-label="Movie Tabs">
-                    <Tab label="Sort" />
+                    <Tab label="Default" />
                     <Tab label="Genre" />
                     
                 </Tabs>
@@ -58,6 +60,9 @@ const SeriesList = () => {
                     <MovieDisplay data={movies} setContent={setMovies} category={"Series"} />
                 </div>
             )}
+            <View image="https://www.shutterstock.com/image-vector/winter-sale-horizontal-advertising-banner-260nw-536057692.jpg"
+                  title="Call Now" description="Paylater and I don't know!" />
+                <Footer />
         </div>
         </div>
     );

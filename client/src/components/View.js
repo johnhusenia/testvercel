@@ -1,17 +1,18 @@
 import React from "react";
 
-const View = ({ image, title, description }) => {
+const Adcot = ({ image, title, description }) => {
   return (
-    <div className="content-container">
+    <div className="adcot-container">
       {image && (
-        <img className="content-image" src={image} alt={title || "Content"} />
+        <img className="adcot-image" src={image} alt={title || "Adcot Content"} />
       )}
-      <div className="content-details">
-        {title && <h2 className="content-title">{title}</h2>}
-        {description && <p className="content-description">{description}</p>}
-      </div>
+          {/* Below is a list of items 
+      <div className="adcot-details">
+        {title && <h2 className="adcot-title">{title}</h2>}
+        {description && <p className="adcot-description">{description}</p>}
+      </div>*/}
     </div>
   );
 };
 
-export default View;
+export default Adcot;
