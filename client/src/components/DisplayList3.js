@@ -48,7 +48,7 @@ const DisplayList3 = ({ category, sort, counter,title }) => {
 
     return (
         <div className="floating-box">
-                                              <h1 style={{ fontSize: '2rem', marginBottom: '20px' }}>
+                                              <h1 style={{ fontSize: '2rem', marginBottom: '20px', color: 'white' }}>
                                                   {title}
                                               </h1>
             <ul className="movie-list">
@@ -57,11 +57,14 @@ const DisplayList3 = ({ category, sort, counter,title }) => {
                     <li key={index} className="movie-item genre">
                         <Link to={`/data/${movie._id}`} className="movie-link">
                             <img src={movie.posterUrl} alt={movie.title || "No title"} />
+                            <div className="data-text">
+                 
                             <p>
                                 {movie.title.length > 20
                                     ? `${movie.title.slice(0, 20)}...`
                                     : movie.title}
                             </p>
+                            </div>
                         </Link>
                     </li>
                 ))}

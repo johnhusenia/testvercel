@@ -5,14 +5,17 @@ const DisplayList = ({ data,category }) => {
 
     return (
         <div>
-          <h1>{category}</h1>
+          <h1 style={{ fontSize: '2rem', marginBottom: '20px', color: 'white' }}>
+            {category}</h1>
     
           <ul className="movie-list">
             {data.map((data, index) => (
               <li key={index} className="movie-item genre">
                 <Link to={`/data/${data._id}`} className="movie-link">
                   <img src={data.posterUrl} alt={data.title || 'No title'} />
-                  <p>{data.title} ({data.releaseDate})</p>
+                  <div className="data-text">
+                  <p>{data.title} ({new Date(data.releaseDate).getFullYear()})</p>
+                  </div>
                 </Link>
               </li>
             ))}

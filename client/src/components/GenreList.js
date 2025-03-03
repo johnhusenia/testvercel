@@ -24,9 +24,9 @@ const GenreList = ({ data, category }) => {
     <div>
       {Object.keys(contentByGenre).map((genre) => (
         <div key={genre} className="genre-container">
-          <h2 className="genre-title">{genre}</h2>
+          <h2 className="genre-title" style={{ fontSize: '1.5rem', marginBottom: '20px', color: 'white' }}>{genre}</h2>
           <Swiper
-            spaceBetween={-20}
+            spaceBetween={-40}
             slidesPerView={7}
             loop={true} // Enable loop mode
             breakpoints={{
@@ -44,17 +44,22 @@ const GenreList = ({ data, category }) => {
             onSwiper={(swiper) => console.log(swiper)}
             className="genre-swiper"
           >
-            {contentByGenre[genre].map((data) => (
-              <SwiperSlide key={data._id} className="movie-item genre">
-                <Link
-                  to={`/${category ? `${category}/` : ''}data/${data._id}`}
-                  className="movie-link"
-                >
-                  <img src={data.posterUrl} alt={data.title} />
-                  <p>{data.title} ({data.releaseYear})</p>
-                </Link>
-              </SwiperSlide>
-            ))}
+            {contentByGenre[genre].map((data) => {
+              console.log(data); // Check the data structure
+              return (
+                <SwiperSlide key={data._id} className="movie-item genre">
+                  <Link
+                    to={`/${category ? `${category}/` : ''}data/${data._id}`}
+                    className="movie-link"
+                  >
+                    <img src={data.posterUrl} alt={data.title} />
+                    <div className="data-text">
+                      <p style={{ color: 'white' }}>{data.title} ({new Date(data.releaseDate).getFullYear()})</p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       ))}

@@ -504,6 +504,36 @@
     }
   },
   {
+    "_id": "movie021",
+    "title": "The Lost City",
+    "releaseYear": 2022,
+    "category": "movie",
+    "genre": ["Adventure", "Comedy", "Action"],
+    "duration": 112,
+    "language": "English",
+    "description": "A reclusive romance novelist and her cover model are swept up in a kidnapping attempt that lands them in a cutthroat jungle adventure.",
+    "director": "Aaron Nee, Adam Nee",
+    "writers": ["Aaron Nee", "Adam Nee"],
+    "cast": [
+      { "name": "Sandra Bullock", "role": "Loretta Sage" },
+      { "name": "Channing Tatum", "role": "Alan Caprison" },
+      { "name": "Daniel Radcliffe", "role": "Harry" }
+    ],
+    "releaseDate": "2022-03-25",
+    "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCpNFi9eB1loVJLSqqYJ4JOmOsgFMByRT4yZfIgCiD83b3dT6e",
+    "trailerUrl": "https://youtube.com/thelostcity-trailer",
+    "productionCompany": "Paramount Pictures",
+    "country": "USA",
+    "budget": 74000000,
+    "boxOffice": 190000000,
+    "awards": ["Best Comedy", "Best Cast"],
+    "ratings": {
+      "IMDb": 6.2,
+      "Rotten Tomatoes": 77
+    }
+  },
+  
+  {
     "_id": "series001",
     "title": "Breaking Bad",
     "releaseYear": 2008,

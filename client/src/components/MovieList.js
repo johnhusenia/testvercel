@@ -40,12 +40,12 @@ const MovieList = () => {
         <Sidenav />
     
         <div className="main-content">
-        <h1>Movies</h1>
+        <h1 style={{ fontSize: '2rem', marginBottom: '20px', color: 'white' }}>Movies</h1>
             <Box sx={{ width: '100%' }}>
                 <Tabs value={tabIndex} onChange={handleTabChange} aria-label="Movie Tabs">
                     
-                    <Tab label="Default" />
-                    <Tab label="Genre" />
+                <Tab style={{ color: 'white' }} label="Default" />
+                <Tab style={{ color: 'white' }} label="Genre" />
                 </Tabs>
             </Box>
 
