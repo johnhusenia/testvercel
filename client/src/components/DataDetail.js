@@ -28,7 +28,60 @@ const DataDetail = () => {
     }
 
     if (!data) {
-        return <div>Loading...</div>;
+      return (
+        <Box sx={{ height: "95vh", display: "flex", flexDirection: "column", marginTop: 3}}>
+                <Sidenav2 />
+      
+                <Container
+                  maxWidth={false}
+                  sx={{
+                    height: "65vh",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark background with transparency
+                      color: "white",
+                      boxShadow: "0px 4px 15px rgba(255, 255, 255, 0.2)",
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      width: "100%",
+                      minHeight: "60%",
+                      backdropFilter: "blur(10px)",
+                  }}
+                >
+                <IconButton
+                  onClick={() => navigate(-1)}
+                  sx={{
+                    position: "absolute",
+                    top: 40,
+                    left: 16,
+                    color: "rgb(255, 255, 255)",
+                    "&:hover": {
+                      backgroundColor: "black", // Set background to black on hover
+                    },
+                  }}
+                >
+                  <ArrowBackIcon />
+                </IconButton>
+      
+            
+      
+                </Container>
+          
+                <Container
+                  maxWidth={false}
+                  sx={{
+                    height: "35vh",
+                    backgroundColor: "#1a1a1a",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "white",
+                    padding: 3,
+                  }}
+                >
+                </Container>
+              </Box>
+            );
     }
 
 
