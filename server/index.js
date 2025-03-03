@@ -8,6 +8,16 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 const dataHandler = new DataHandler(); 
 
+app.get('/api/alldata', async (req, res) => {
+    try {
+        const data = await dataHandler.getAllData();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.get('/api/movies', async (req, res) => {
     try {
         const movies = await dataHandler.getMovies();

@@ -8,7 +8,7 @@ const DisplayList = ({ data,category }) => {
           <h1>{category}</h1>
     
           <ul className="movie-list">
-            {data.slice(0, 5).map((data, index) => (
+            {data.map((data, index) => (
               <li key={index} className="movie-item genre">
                 <Link to={`/data/${data._id}`} className="movie-link">
                   <img src={data.posterUrl} alt={data.title || 'No title'} />

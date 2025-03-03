@@ -1,71 +1,42 @@
 import React, { useState } from "react";
-import { Drawer, List, ListItem, ListItemButton, ListItemText, Typography, Button, Box } from "@mui/material";
+import { Drawer, List, ListItem, ListItemButton, ListItemText, Typography, Button, AppBar, Toolbar } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-
-const Sidenav2 = () => {
+const SidebarNav = () => {
     const [open, setOpen] = useState(false);
 
     const toggleSidebar = () => {
-        setOpen(!open);  
+        setOpen(!open);
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <Button
-                onClick={toggleSidebar}
-                sx={{
-                    position: 'absolute',
-                    top: '20px',
-                    left: '20px',
-                    zIndex: 2,  
-                    backgroundColor: 'black',
-                    color: 'white',
-                    borderRadius: '0', 
-                    padding: '10px',
-                    boxShadow: 2,
-                }}
-            >
-                <MenuIcon />
-            </Button>
+        <>
+            <AppBar position="fixed" sx={{ backgroundColor: "#333", zIndex: 1400 }}>
+                <Toolbar>
+                    <Button onClick={toggleSidebar} sx={{ color: "white", mr: 2 }}>
+                        <MenuIcon />
+                    </Button>
+                    <Typography variant="h6" sx={{ flexGrow: 1, color: "white" }}>
+                        My App
+                    </Typography>
+                </Toolbar>
+            </AppBar>
 
 
             <Drawer
-                variant={open ? "permanent" : "temporary"} 
-                className="sidenav"
+                anchor="left"
+                open={open}
+                onClose={toggleSidebar}
                 sx={{
-                    width: open ? 200 : 0, 
-                    flexShrink: 0,
                     "& .MuiDrawer-paper": {
-                        width: open ? 200 : 0,
+                        width: 200,
                         boxSizing: "border-box",
-                        transition: "width 0.3s ease", 
-                    },
-                    display: { xs: "none", sm: "block" }, 
-                    "@media (max-width: 600px)": {
-                        position: "absolute", 
-                        top: 0,
-                        left: open ? 0 : "-100%", 
-                        height: "100vh",
-                        transition: "left 0.3s ease",
-                        zIndex: 1200,
+                        paddingTop: "64px",
+                        backgroundColor: "white"
                     },
                 }}
             >
-                <div className="sidebar-header">
-                    <Typography
-                        variant="h1"
-                        sx={{
-                            fontSize: "1.5rem",
-                            color: "white",
-                            textAlign: "center",
-                            padding: "10px 0",
-                        }}
-                    >
-                        My Sidebar
-                    </Typography>
-                </div>
                 <List>
                     {[
                         { text: "Home", path: "/user" },
@@ -75,15 +46,15 @@ const Sidenav2 = () => {
                         { text: "Logout", path: "/" },
                     ].map((item) => (
                         <ListItem key={item.text} disablePadding>
-                            <ListItemButton component={Link} to={item.path} className="sidenav-item">
+                            <ListItemButton component={Link} to={item.path}>
                                 <ListItemText primary={item.text} />
                             </ListItemButton>
                         </ListItem>
                     ))}
                 </List>
             </Drawer>
-        </Box>
+        </>
     );
 };
 
-export default Sidenav2;
+export default SidebarNav;

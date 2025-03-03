@@ -5,6 +5,10 @@ class DataHandler {
         this.data = data; // Use the imported data
     }
 
+    getAllData() {
+        return Promise.resolve(this.data);
+    }
+
     getMovies() {
         return Promise.resolve(this.data.filter(item => item.category === 'movie'));
     }

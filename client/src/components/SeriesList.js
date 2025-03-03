@@ -3,7 +3,7 @@ import axios from 'axios';
 import MovieDisplay from './SortList'; // Import MovieDisplay
 import GenreList from './GenreList'; // Import MovieDisplay
 import { Tabs, Tab, Box } from '@mui/material';
-import Sidenav from './Sidenav';
+import Sidenav from './Sidenav2';
 
 const SeriesList = () => {
     const [movies, setMovies] = useState([]);
@@ -32,7 +32,7 @@ const SeriesList = () => {
 
 
     return (
-        <div style={{ display: 'flex' }}>
+        <div className="container">
           {/* Sidenav */}
           <Sidenav />
       
