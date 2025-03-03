@@ -47,7 +47,7 @@ const HomePage = () => {
       <div className="logo">STREAMING</div>
       <br/>
       <h2>Stream now! Pay Later!</h2>
-      <p>This is the right time to watch.</p>
+      <p>This is the right time to watch:</p>
       <div>
       {showMovie ? (
         <DisplayList category="movie" sort="rating" />
