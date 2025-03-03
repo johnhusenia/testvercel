@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // Import Swiper styles
 
-
-const GenreList = ({ data,category }) => {
+const GenreList = ({ data, category }) => {
   const groupByGenre = () => {
     const genreMap = {};
 
-    data.forEach(data => {
-      data.genre.forEach(g => {
+    data.forEach((data) => {
+      data.genre.forEach((g) => {
         if (!genreMap[g]) {
           genreMap[g] = [];
         }
@@ -24,16 +25,37 @@ const GenreList = ({ data,category }) => {
       {Object.keys(contentByGenre).map((genre) => (
         <div key={genre} className="genre-container">
           <h2 className="genre-title">{genre}</h2>
-          <div className="genre-list">
+          <Swiper
+            spaceBetween={-20}
+            slidesPerView={7}
+            loop={true} // Enable loop mode
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 7,
+              },
+            }}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            className="genre-swiper"
+          >
             {contentByGenre[genre].map((data) => (
-              <li key={data._id} className="movie-item genre">
-              <Link to={`/data/${data._id}`} className="movie-link">
-                <img src={data.posterUrl} alt={data.title} />
-                <p>{data.title} ({data.releaseYear})</p>
-              </Link>
-            </li>
+              <SwiperSlide key={data._id} className="movie-item genre">
+                <Link
+                  to={`/${category ? `${category}/` : ''}data/${data._id}`}
+                  className="movie-link"
+                >
+                  <img src={data.posterUrl} alt={data.title} />
+                  <p>{data.title} ({data.releaseYear})</p>
+                </Link>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       ))}
     </div>

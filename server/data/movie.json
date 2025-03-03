@@ -1009,7 +1009,38 @@
           "IMDb": 8.7,
           "Rotten Tomatoes": 88
         }
+      },
+      {
+        "_id": "series021",
+        "title": "The Expanse",
+        "releaseYear": 2015,
+        "category": "series",
+        "genre": ["Sci-Fi", "Drama", "Thriller"],
+        "duration": 60,
+        "language": "English",
+        "description": "Set in a future where humanity has colonized the Solar System, a detective and a space crew uncover a vast conspiracy that threatens peace and survival.",
+        "director": "Mark Fergus, Hawk Ostby",
+        "writers": ["James S.A. Corey", "Mark Fergus", "Hawk Ostby"],
+        "cast": [
+          {"name": "Thomas Jane", "role": "Josephus Miller"},
+          {"name": "Steven Strait", "role": "James Holden"},
+          {"name": "Cas Anvar", "role": "Alex Kamal"},
+          {"name": "Dominique Tipper", "role": "Naomi Nagata"}
+        ],
+        "releaseDate": "2015-12-14",
+        "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR1sz93TPAB-TNTVKWKTyoszzSafGadWslu6Aq41c_lYRCfJsCV",
+        "trailerUrl": "https://youtube.com/the-expanse-trailer",
+        "productionCompany": "Alcon Entertainment, Amazon Studios",
+        "country": "USA",
+        "budget": 4000000,
+        "boxOffice": null,
+        "awards": ["1 Primetime Emmy Award", "2 Saturn Awards"],
+        "ratings": {
+          "IMDb": 8.5,
+          "Rotten Tomatoes": 94
+        }
       }
+      
         
       
       
