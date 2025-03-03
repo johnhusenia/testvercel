@@ -24,9 +24,20 @@ const GenreList = ({ data, category }) => {
     <div>
       {Object.keys(contentByGenre).map((genre) => (
         <div key={genre} className="genre-container">
-          <h2 className="genre-title" style={{ fontSize: '1.5rem', marginBottom: '20px', color: 'white' }}>{genre}</h2>
+<h2
+  className="genre-title"
+  style={{
+    fontSize: '1.5rem',
+    marginBottom: '20px',
+    color: 'white',
+    borderBottom: '2px solid white',  // Adds a white line under the title
+    paddingBottom: '10px',            // Adds some spacing between the text and the line
+  }}
+>
+  {genre}
+</h2>
           <Swiper
-            spaceBetween={-40}
+            spaceBetween={10}
             slidesPerView={7}
             loop={true} // Enable loop mode
             breakpoints={{

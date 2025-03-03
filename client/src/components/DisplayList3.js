@@ -2,8 +2,8 @@ import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const DisplayList3 = ({ category, sort, counter,title }) => {
-    const getCount = useCallback(() => (window.innerWidth < 600 ? 3 : counter), [counter]);
+const DisplayList3 = ({ category, sort, counter, title }) => {
+    const getCount = useCallback(() => (window.innerWidth < 600 ? 1 : counter), [counter]);  // Adjust count for smaller screens
     const [count, setCount] = useState(getCount);
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
@@ -48,22 +48,20 @@ const DisplayList3 = ({ category, sort, counter,title }) => {
 
     return (
         <div className="floating-box">
-                                              <h1 style={{ fontSize: '2rem', marginBottom: '20px', color: 'white' }}>
-                                                  {title}
-                                              </h1>
+            <h1 style={{ fontSize: '2rem', marginBottom: '20px', color: 'white' }}>
+                {title}
+            </h1>
             <ul className="movie-list">
-
                 {data.slice(0, count).map((movie, index) => (
                     <li key={index} className="movie-item genre">
                         <Link to={`/data/${movie._id}`} className="movie-link">
                             <img src={movie.posterUrl} alt={movie.title || "No title"} />
                             <div className="data-text">
-                 
-                            <p>
-                                {movie.title.length > 20
-                                    ? `${movie.title.slice(0, 20)}...`
-                                    : movie.title}
-                            </p>
+                                <p>
+                                    {movie.title.length > 20
+                                        ? `${movie.title.slice(0, 20)}...`
+                                        : movie.title}
+                                </p>
                             </div>
                         </Link>
                     </li>

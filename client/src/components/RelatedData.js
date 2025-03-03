@@ -44,6 +44,7 @@ const RelatedData = ({ genre }) => {
       <Swiper
         spaceBetween={20} // Space between slides
         slidesPerView={3} // Number of slides visible at a time
+        loop={true} // Enable loop mode
         breakpoints={{
           640: {
             slidesPerView: 1, // 1 slide per view on small screens
@@ -58,7 +59,12 @@ const RelatedData = ({ genre }) => {
         className="related-swiper"
       >
         {relatedItems.slice(0, 10).map((item, index) => (
-          <SwiperSlide key={index} className="related-item" onClick={() => handleClick(item._id)} style={{ cursor: 'pointer' }}>
+          <SwiperSlide
+            key={index}
+            className="related-item"
+            onClick={() => handleClick(item._id)}
+            style={{ cursor: 'pointer' }}
+          >
             <img src={item.posterUrl} alt={item.title} className="related-img" />
             <Typography className="related-title">{item.title}</Typography>
           </SwiperSlide>
@@ -66,6 +72,7 @@ const RelatedData = ({ genre }) => {
       </Swiper>
     </Box>
   );
+  
 };
 
 export default RelatedData;

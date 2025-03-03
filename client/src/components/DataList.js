@@ -58,7 +58,9 @@ const DataList = () => {
     return (
         <div className="container">
             <Sidenav />
-            <div className=".main-content2" style={{ flex: 1, padding: '20px', backgroundColor: ' #5c5e5c' }}>
+            <div className=".main-content2" style={{ flex: 1, padding: '20px', backgroundColor: '#000000e1',
+                
+             }}>
                 {error ? (
                     <div style={{ color: 'red', marginBottom: '20px' }}>
                         <h3>{error}</h3>

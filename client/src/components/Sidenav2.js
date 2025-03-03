@@ -48,7 +48,7 @@ const SidebarNav = () => {
                     ].map((item) => (
                         <ListItem key={item.text} disablePadding>
                             <ListItemButton component={Link} to={item.path}>
-                                <ListItemText primary={item.text} />
+                                <ListItemText sx={{color: "#000000e1"}}primary={item.text} />
                             </ListItemButton>
                         </ListItem>
                     ))}

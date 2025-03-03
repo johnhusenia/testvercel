@@ -5,7 +5,9 @@ const DisplayList = ({ data,category }) => {
 
     return (
         <div>
-          <h1 style={{ fontSize: '2rem', marginBottom: '20px', color: 'white' }}>
+          <h1 style={{ fontSize: '2rem', marginBottom: '20px', color: 'white' 
+
+          }}>
             {category}</h1>
     
           <ul className="movie-list">
