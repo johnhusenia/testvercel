@@ -53,16 +53,19 @@ const DataDetail = () => {
             }}
           >
           <IconButton
-                    onClick={() => navigate(-1)} 
-                    sx={{
-                        position: "absolute",
-                        top: 40,
-                        left: 16,
-                        color: "rgb(255, 255, 255)",
-                    }}
-                >
-                    <ArrowBackIcon />
-                </IconButton>
+            onClick={() => navigate(-1)}
+            sx={{
+              position: "absolute",
+              top: 40,
+              left: 16,
+              color: "rgb(255, 255, 255)",
+              "&:hover": {
+                backgroundColor: "black", // Set background to black on hover
+              },
+            }}
+          >
+            <ArrowBackIcon />
+          </IconButton>
 
               <Box
                 component="img"

@@ -21,10 +21,12 @@ const HomePage = () => {
 
   const handleTogglePopup = () => {
     setShowPopup(!showPopup); 
+    setShowRegistrationPopup(false);
   };
 
   const handleToggleRegistrationPopup = () => {
     setShowRegistrationPopup(!showRegistrationPopup);
+    setShowPopup(false);
   };
 
 
