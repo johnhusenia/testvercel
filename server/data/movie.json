@@ -451,7 +451,7 @@
               {"name": "Aaron Paul", "role": "Jesse Pinkman"}
             ],
             "releaseDate": "2008-01-20",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png",
+            "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDpXSjbEBTBIPqNaOfiwk_VPfi6I6-AVklqfGlONWmXtxt3uK",
             "trailerUrl": "https://youtube.com/breakingbad-trailer",
             "productionCompany": "Sony Pictures Television",
             "country": "USA",
@@ -499,7 +499,7 @@
               {"name": "Finn Wolfhard", "role": "Mike Wheeler"}
             ],
             "releaseDate": "2016-07-15",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/f/f7/Stranger_Things_season_4.jpg",
+            "posterUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png",
             "trailerUrl": "https://youtube.com/strangerthings-trailer",
             "productionCompany": "Netflix",
             "country": "USA",
@@ -523,7 +523,7 @@
               {"name": "Rainn Wilson", "role": "Dwight Schrute"}
             ],
             "releaseDate": "2005-03-24",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/8/80/The_Office_US_logo.svg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT1rLm86VJA7Tcf4ZjWQE6FrXCh9lvUu3RzeNIEDH2YqD3ta8BG",
             "trailerUrl": "https://youtube.com/theoffice-trailer",
             "productionCompany": "NBC",
             "country": "USA",
@@ -547,7 +547,7 @@
               {"name": "Matt Smith", "role": "Prince Philip"}
             ],
             "releaseDate": "2016-11-04",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/4/43/The_Crown_season_1.jpg",
+            "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQauSsP-Enb9M4LHYGAm62_WjtPA_pgviPr0HnSKs7bhUJo9_bh",
             "trailerUrl": "https://youtube.com/thecrown-trailer",
             "productionCompany": "Netflix",
             "country": "USA",
@@ -571,7 +571,7 @@
               {"name": "Gina Carano", "role": "Cara Dune"}
             ],
             "releaseDate": "2019-11-12",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/4/4e/The_Mandalorian_title_card.jpg",
+            "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQrnZpOro9MsdCe5GazZKMd_VfpwVr3kBA0G8Nz6tKcRllgd0kX",
             "trailerUrl": "https://youtube.com/themandalorian-trailer",
             "productionCompany": "Lucasfilm",
             "country": "USA",
@@ -595,7 +595,7 @@
               {"name": "Martin Freeman", "role": "John Watson"}
             ],
             "releaseDate": "2010-07-25",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Sherlock_logo.jpg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSbDhmgzNmiDQGjh06qfgDhLaWUC88T2rjG9vXpD0uWb_Rr0HWihhqq2MXQ2PZmDokXrA2g",
             "trailerUrl": "https://youtube.com/sherlock-trailer",
             "productionCompany": "BBC",
             "country": "UK",
@@ -619,7 +619,7 @@
               {"name": "Courteney Cox", "role": "Monica Geller"}
             ],
             "releaseDate": "1994-09-22",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/0/0b/Friends_Logo_2014.jpg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRcIgAp4_ewKmAmoclICiBg3He-aCphQtRKxRhh9j08lO-KUbudUOBEtzg5LG-nFcWZr2lQw",
             "trailerUrl": "https://youtube.com/friends-trailer",
             "productionCompany": "Warner Bros. Television",
             "country": "USA",
@@ -627,30 +627,7 @@
             "boxOffice": null,
             "awards": ["6 Primetime Emmy Awards"]
           },
-          {
-            "_id": "series009",
-            "title": "Breaking Bad",
-            "releaseYear": 2008,
-            "category": "series",
-            "genre": ["Crime", "Drama", "Thriller"],
-            "duration": 47,
-            "language": "English",
-            "description": "A high school chemistry teacher turned methamphetamine producer partners with a former student to secure his family's future.",
-            "director": "Vince Gilligan",
-            "writers": ["Vince Gilligan"],
-            "cast": [
-              {"name": "Bryan Cranston", "role": "Walter White"},
-              {"name": "Aaron Paul", "role": "Jesse Pinkman"}
-            ],
-            "releaseDate": "2008-01-20",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png",
-            "trailerUrl": "https://youtube.com/breakingbad-trailer",
-            "productionCompany": "Sony Pictures Television",
-            "country": "USA",
-            "budget": 3000000,
-            "boxOffice": null,
-            "awards": ["16 Primetime Emmy Awards", "2 Golden Globe Awards"]
-          },
+        
           {
             "_id": "series010",
             "title": "Peaky Blinders",
@@ -667,7 +644,7 @@
               {"name": "Helen McCrory", "role": "Polly Gray"}
             ],
             "releaseDate": "2013-09-12",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/1/17/Peaky_Blinders_title_card.jpg",
+            "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQyM-fITvGkU2Mzzq4s30OlgMQKMtS1z4ypUIWQZZuoBvh-xrTQBh7gXwdHznKOCxBFD6z_3A",
             "trailerUrl": "https://youtube.com/peakyblinders-trailer",
             "productionCompany": "BBC Two",
             "country": "UK",
@@ -691,7 +668,7 @@
               {"name": "Freya Allan", "role": "Ciri"}
             ],
             "releaseDate": "2019-12-20",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/a/a6/The_Witcher_Logo.jpg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQrpQa4kPsu6vyXAGfOOHSuscIGwdQuxyOs0Lp-EndlqkhFdcxNPg0kt-lws9e49GAqx2wxRg",
             "trailerUrl": "https://youtube.com/thewitcher-trailer",
             "productionCompany": "Netflix",
             "country": "USA",
@@ -715,7 +692,7 @@
               {"name": "Úrsula Corberó", "role": "Tokyo"}
             ],
             "releaseDate": "2017-05-02",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/5/50/Money_Heist_season_5.jpg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTVsWI561lQ92z2b7ip8eIGaUk1D8FB6-_Co445YLMwlTrIOtjqqPKzO5ZzWewU7HprQ_8X2w",
             "trailerUrl": "https://youtube.com/moneyheist-trailer",
             "productionCompany": "Netflix",
             "country": "Spain",
@@ -739,7 +716,7 @@
               {"name": "Jack Quaid", "role": "Hughie Campbell"}
             ],
             "releaseDate": "2019-07-26",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/d/d4/The_Boys_season_2.jpg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRYxan0RVMaKr1JxY2uZlvhPqhqU-KIGXbYpU_LW1HG3-f9-RpYQlOPok90hExi-L3cvRuE",
             "trailerUrl": "https://youtube.com/theboys-trailer",
             "productionCompany": "Amazon Prime Video",
             "country": "USA",
@@ -763,7 +740,7 @@
               {"name": "Pedro Pascal", "role": "Javier Peña"}
             ],
             "releaseDate": "2015-08-28",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/a/ab/Narcos_Season_1.jpg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQGIXHa1dW0obEO9ydIraB9K9LNvlP5uQjAIWApEnoz91i3AZv8xtJmGBuaO7BV8-4MCTUjmw",
             "trailerUrl": "https://youtube.com/narcos-trailer",
             "productionCompany": "Netflix",
             "country": "USA",
@@ -787,7 +764,7 @@
               {"name": "Thandie Newton", "role": "Maeve Millay"}
             ],
             "releaseDate": "2016-10-02",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/3/38/Westworld_logo.svg",
+            "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTiqHIlL0dnbEDRg386nY8LHFkFBl4C2wPKLy9QTws1Sy0hOaWxWFKQpSus2q1uPPecjewO",
             "trailerUrl": "https://youtube.com/westworld-trailer",
             "productionCompany": "HBO",
             "country": "USA",
@@ -811,37 +788,13 @@
               {"name": "Maja Schöne", "role": "Katharina Nielsen"}
             ],
             "releaseDate": "2017-12-01",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/5/53/Dark_season_1.jpg",
+            "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6ApenbR-AZkjJySI-VBzjMJYPWFoqUgCxfkGyvXpCru89imX7jzAdmaDSgEVOY4MIDnR_",
             "trailerUrl": "https://youtube.com/dark-trailer",
             "productionCompany": "Netflix",
             "country": "Germany",
             "budget": 4000000,
             "boxOffice": null,
             "awards": ["1 Grimme Award"]
-          },
-          {
-            "_id": "series017",
-            "title": "Stranger Things",
-            "releaseYear": 2016,
-            "category": "series",
-            "genre": ["Drama", "Fantasy", "Horror"],
-            "duration": 50,
-            "language": "English",
-            "description": "A group of kids in a small town uncover a series of supernatural mysteries tied to a secret government experiment.",
-            "director": "The Duffer Brothers",
-            "writers": ["The Duffer Brothers"],
-            "cast": [
-              {"name": "Millie Bobby Brown", "role": "Eleven"},
-              {"name": "Finn Wolfhard", "role": "Mike Wheeler"}
-            ],
-            "releaseDate": "2016-07-15",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/f/f7/Stranger_Things_season_4.jpg",
-            "trailerUrl": "https://youtube.com/strangerthings-trailer",
-            "productionCompany": "Netflix",
-            "country": "USA",
-            "budget": 8000000,
-            "boxOffice": null,
-            "awards": ["7 Primetime Emmy Awards", "1 Screen Actors Guild Award"]
           },
           {
             "_id": "series018",
@@ -859,7 +812,7 @@
               {"name": "Yvonne Strahovski", "role": "Serina Joy"}
             ],
             "releaseDate": "2017-04-26",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Handmaid%27s_Tale_season_1.jpg",
+            "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7mncwqwQBkZJOmh2j7ZfMwFndDac6G_cwJ8YFTxoYGzL7EdYu",
             "trailerUrl": "https://youtube.com/handmaidstale-trailer",
             "productionCompany": "Hulu",
             "country": "USA",
@@ -883,7 +836,7 @@
               {"name": "Ted Danson", "role": "Michael"}
             ],
             "releaseDate": "2016-09-19",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/en/9/9f/The_Good_Place_title_card.png",
+            "posterUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ6IUIXhnNRmKsnbCv7DIM_az8nMzScUOqpNlCV5HBp6IMYvOA_",
             "trailerUrl": "https://youtube.com/thegoodplace-trailer",
             "productionCompany": "NBC",
             "country": "USA",
@@ -907,7 +860,7 @@
               {"name": "Julie Kavner", "role": "Marge Simpson"}
             ],
             "releaseDate": "1989-12-17",
-            "posterUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/The_Simpsons_logo.svg/1200px-The_Simpsons_logo.svg.png",
+            "posterUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTAxmhnrzBIDS4CJHsPXkLqtsmUuBKiuLgnrL8WwuiCePcHFk02",
             "trailerUrl": "https://youtube.com/thesimpsons-trailer",
             "productionCompany": "20th Century Fox Television",
             "country": "USA",
