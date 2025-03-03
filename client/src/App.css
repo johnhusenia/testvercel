@@ -488,6 +488,71 @@ footer {
   transform: scale(1.1);
 }
 
+/* Data Preview List Container */
+.data-preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+/* Individual Data Preview Item */
+.data-preview-item {
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #1a1a1a;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect on Data Preview Item */
+.data-preview-item:hover {
+  transform: translateY(-10px);
+}
+
+/* Data Poster Image */
+.data-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Link inside each data preview item */
+.data-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* No Data Message */
+.no-data-message {
+  text-align: center;
+  font-size: 18px;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
   .container {

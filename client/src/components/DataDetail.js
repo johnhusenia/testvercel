@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Sidenav2 from './Sidenav2';
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, IconButton } from "@mui/material";
 import RelatedData from "./RelatedData";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const DataDetail = () => {
     const { id } = useParams();
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         axios.get(`https://testvercel-drab-alpha.vercel.app/api/data/${id}`)
@@ -31,37 +33,36 @@ const DataDetail = () => {
 
 
     return (
-        <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+  <Box sx={{ height: "95vh", display: "flex", flexDirection: "column", marginTop: 3}}>
           <Sidenav2 />
+
           <Container
             maxWidth={false}
             sx={{
               height: "65vh",
-              backgroundColor: "#121212", // Dark background
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-            }}
-          >
-            {/* Floating Box */}
-            <Box
-              sx={{
-                backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark background with transparency
+              backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark background with transparency
                 color: "white",
-                padding: 3,
-                borderRadius: 3,
                 boxShadow: "0px 4px 15px rgba(255, 255, 255, 0.2)",
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "space-between",
-                width: "80%",
-                maxWidth: "1000px",
+                width: "100%",
                 minHeight: "60%",
                 backdropFilter: "blur(10px)",
-              }}
-            >
+            }}
+          >
+          <IconButton
+                    onClick={() => navigate(-1)} // Navigate back
+                    sx={{
+                        position: "absolute",
+                        top: 40,
+                        left: 16,
+                        color: "white",
+                    }}
+                >
+                    <ArrowBackIcon />
+                </IconButton>
 
               <Box
                 component="img"
@@ -115,7 +116,7 @@ const DataDetail = () => {
                   </Typography>
                 )}
               </Box>
-            </Box>
+
           </Container>
     
           <Container
@@ -127,6 +128,7 @@ const DataDetail = () => {
               justifyContent: "center",
               alignItems: "center",
               color: "white",
+              padding: 3,
             }}
           >
          <RelatedData genre={data.genre} />
