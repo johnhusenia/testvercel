@@ -1,3 +1,8 @@
+/* Base styles */
+.container {
+  margin-top: 20px;
+}
+
 .movie-item {
   display: flex;
   flex-direction: column;
@@ -64,14 +69,38 @@
   border-radius: 8px;
 }
 
-/* Movie Display Styles */
 .button-container {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-top: 20px; /* Optional: Add top margin for spacing */
 }
 
 .sort-buttons {
-  margin-bottom: 10px;
+  display: flex;
+  gap: 15px; /* Space between buttons */
 }
+
+.sort-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5c5e5c; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sort-button:hover {
+  background-color: #868686; /* Darker green on hover */
+  transform: translateY(-2px); /* Subtle hover effect */
+}
+
+.sort-button:focus {
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Green glow effect on focus */
+}
+
 
 .movie-list {
   display: flex;
@@ -154,6 +183,7 @@ li {
   flex-grow: 1;  /* This allows the main content to take up the remaining space */
   transition: margin-left 0.3s ease-in-out;
 }
+
 /* Footer*/
 .footer {
   background-color: #111;
@@ -346,7 +376,6 @@ footer {
   background-color: #45a049;
 }
 
-
 .related-container {
   height: 35vh;
   background-color: #1a1a1a;
@@ -397,6 +426,7 @@ footer {
   text-overflow: ellipsis;
   white-space: nowrap; /* Ensures title stays in one line */
 }
+
 /* No Items Message */
 .no-items {
   font-size: 1rem;
@@ -458,104 +488,121 @@ footer {
   transform: scale(1.1);
 }
 
-
-
-/* Mobile responsiveness */
+/* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
-  /* Adjusting popup content */
-  .popup-content {
-    width: 80%;  /* Ensure the popup is responsive on smaller screens */
-    padding: 20px; /* Reduced padding for better fit on small screens */
+  .container {
+    margin-top: 10px;
   }
 
-  .open-popup-btn {
-    width: 100%;  /* Make the button full-width on mobile */
-    font-size: 14px; /* Smaller font for mobile */
+  .movie-item {
+    width: 100%;
+    padding: 5px;
   }
 
-  .popup-content input,
-  .popup-content button {
-    font-size: 14px; /* Adjust font size for mobile inputs */
+  .movie-item img {
+    width: 80px;
+    height: 120px;
   }
 
-  /* Footer adjustments */
+  .genre-title {
+    font-size: 20px;
+  }
+
+  .genre-list {
+    gap: 10px;
+  }
+
+  .movie-item.genre img {
+    width: 120px;
+    height: 180px;
+  }
+
+  .movie-list {
+    gap: 10px;
+  }
+
+  .movie-item.movie-display img {
+    width: 80px;
+    height: 120px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
   .footer {
-    padding: 20px;
+    padding: 20px 0;
   }
+
   .footer-title {
     font-size: 1.2rem;
   }
-  .main-content {
-    margin-top: 20px !important;
-    width: 100%;
-  }
-  
 
-  .logo {
-    font-size: 30px; /* Smaller logo for mobile */
-    padding: 10px; /* Reduce padding */
+  .footer-menu li {
+    margin-bottom: 5px;
   }
 
-  .left-container, .right-container {
-    width: 100%; /* Make both containers take full width on mobile */
-    padding: 10px; /* Add padding */
-  }
-
-  .left-container {
-    background-color: #f9f9f9; /* Lighter background for phone */
-  }
-
-  .right-container {
-    color: black; /* Change text color to black on mobile for contrast */
-  }
-  .sidenav .MuiDrawer-paper {
-    width: 125px; /* Narrower sidebar for phones */
-    padding: 10px; /* Add some padding */
-  }
-
-  .sidebar-header h1 {
-    font-size: 1.2rem; /* Smaller font size for header */
-  }
-
-  .sidenav-item {
-    padding: 10px 0; /* Adjust padding for smaller items */
-  }
-
-  .sidenav .MuiListItemButton-root {
-    font-size: 0.9rem; /* Smaller font size for list items */
-  }
-
-  .sidenav .MuiListItemButton-root:hover {
-    background-color: #4c4c4c !important; /* Lighter hover background for better mobile contrast */
+  .social-links {
+    gap: 5px;
   }
 
   .image-background {
-    background-size: cover; /* Adjust image size for mobile */
-    height: 60vh; /* Adjust height of image for mobile */
-    font-size: 18px; /* Smaller font size */
+    background-size: cover;
+    font-size: 18px;
   }
 
   .top-navbar {
-    height: 15vh; /* Reduce navbar height on small screens */
+    height: 15vh;
   }
 
   .nav-buttons {
-    top: 10px; /* Reduce the distance from the top */
-    right: 10px; /* Reduce the distance from the right */
-    gap: 15px; /* Smaller gap between buttons */
+    top: 10px;
+    right: 10px;
+    gap: 15px;
   }
 
   .nav-buttons button {
-    padding: 8px 16px; /* Smaller button padding */
-    font-size: 12px; /* Smaller font size */
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 30px;
+    padding: 10px 20px;
+  }
+
+  .left-container, .right-container {
+    width: 100%;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .related-container {
+    height: 25vh;
+  }
+
+  .related-item {
+    min-width: 120px;
+    max-width: 150px;
+  }
+
+  .related-img {
+    height: 60%;
   }
 
   .advertisement-container {
-    width: 95%;
+    width: 100%;
+  }
+
+  .advertisement-image {
+    max-height: 200px;
   }
 
   .advertisement-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .advertisement-description {

@@ -26,12 +26,16 @@ const MovieDisplay = ({ data, setContent,category }) => {
   return (
     <div>
 
-      <div className="button-container">
-        <div className="sort-buttons">
-          <button onClick={sortDataByReleaseDate}>Sort by Release</button>
-          <button onClick={sortDataAlphabetically}>Sort by Name</button>
+        <div className="button-container">
+          <div className="sort-buttons">
+            <button onClick={sortDataByReleaseDate} className="sort-button">
+              Sort by Release
+            </button>
+            <button onClick={sortDataAlphabetically} className="sort-button">
+              Sort by Name
+            </button>
+          </div>
         </div>
-      </div>
 
       <ul className="movie-list">
         {data.map((data, index) => (

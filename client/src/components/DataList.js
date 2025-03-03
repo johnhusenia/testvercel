@@ -43,7 +43,7 @@ const DataList = () => {
           <DisplayList data={series.slice(0, 5)}  category={"Series"} />
           <DisplayList data={movies.slice(0, 5)}  category={"Movies"} />
           <Advertisement
-                image="https://www.shutterstock.com/image-vector/winter-sale-horizontal-advertising-banner-260nw-536057692.jpg"
+                image="../stuff/fri7.png"
                 title="Special Offer!"
                 description="Get 50% off on all items. Limited time only!"
             />
