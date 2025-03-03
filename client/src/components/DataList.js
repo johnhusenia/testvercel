@@ -3,7 +3,7 @@ import axios from 'axios';
 import DisplayList from './DisplayList';
 import Sidenav from './Sidenav2';
 import Footer from './Footer';
-import Advertisement from "./Advertisement";
+import View from "./View";
 
 const DataList = () => {
     const [movies, setMovies] = useState([]);
@@ -42,10 +42,10 @@ const DataList = () => {
 
           <DisplayList data={series.slice(0, 5)}  category={"Series"} />
           <DisplayList data={movies.slice(0, 5)}  category={"Movies"} />
-          <Advertisement
-                image="../stuff/fri7.png"
-                title="Special Offer!"
-                description="Get 50% off on all items. Limited time only!"
+          <View
+                image="fri7.png"
+                title="asdasdsad"
+                description="Testing"
             />
           <Footer />
           </div>
