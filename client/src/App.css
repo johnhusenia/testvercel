@@ -1,6 +1,7 @@
 /* Base styles */
 .container {
   margin-top: 20px;
+  
 }
 
 .movie-item {
@@ -117,8 +118,8 @@
   padding: 0;
   margin: 0;
   justify-content: center;
-  width: 100%; /* Ensure it does not overflow */
-  overflow-x: hidden;  /* Specifically for movie list to hide overflow */
+  width: 100%; 
+  overflow-x: hidden;  
 }
 
 .movie-item.movie-display {
@@ -137,18 +138,23 @@
 .movie-list .more-container {
   text-align: center;
   padding: 20px;
-  background-color: #707070; 
-  border-radius: 5px;      
-  height: 30%;
+  background-color: #707070;
+  border-radius: 5px;
+  height: 20%;
   margin-top: 50px;
+  justify-content: center;
+  border: none; /* Remove border */
+  box-shadow: 0 0 0 2px rgb(246, 246, 246); /* Simulate a border with a shadow */
 }
 
 .movie-list .more-text p {
   font-size: 18px;
-  color: #333;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
   margin: 0;
+
+  
 }
 
 li {
@@ -198,6 +204,8 @@ li {
   overflow-x: hidden; /* Prevent horizontal scrolling for this section */
   width: 100%;         /* Ensure full width */
   position: relative;  /* Control the layout properly */
+  flex-grow: 1;  /* This allows the main content to take up the remaining space */
+  
 }
 
 
@@ -569,6 +577,18 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.floating-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for floating effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 30px;
+}
+
+.floating-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+
 
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {

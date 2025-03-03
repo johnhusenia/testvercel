@@ -53,7 +53,7 @@ const DataDetail = () => {
             }}
           >
           <IconButton
-                    onClick={() => navigate(-1)} // Navigate back
+                    onClick={() => navigate(-1)} 
                     sx={{
                         position: "absolute",
                         top: 40,

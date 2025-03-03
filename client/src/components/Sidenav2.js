@@ -40,6 +40,7 @@ const SidebarNav = () => {
                 <List>
                     {[
                         { text: "Home", path: "/user" },
+                        { text: "Browse", path: "/browse" },
                         { text: "Movies", path: "/movies" },
                         { text: "Series", path: "/series" },
                         { text: "Favorites", path: "/favorites" },

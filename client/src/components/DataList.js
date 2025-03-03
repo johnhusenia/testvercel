@@ -56,7 +56,7 @@ const DataList = () => {
     }
 
     return (
-        <div style={{ display: 'flex', marginTop: '20px' }}>
+        <div className="container">
             <Sidenav />
             <div className=".main-content2" style={{ flex: 1, padding: '20px', backgroundColor: '#f4f4f4' }}>
                 {error ? (
@@ -68,18 +68,17 @@ const DataList = () => {
                         <div style={{ marginTop: '40px' }}>
                             <div className="slideshow-container">
                                 <animated.div style={slideProps} key={showMovie}>
-                                    <h1 style={{ fontSize: '2rem', marginBottom: '20px' }}>
-                                        {showMovie === 1 ? 'Best Movies' : 'Best Series'}
-                                    </h1>
+
                                     <DisplayList3
                                         category={showMovie === 1 ? 'movie' : 'series'}
                                         sort="rating"
-                                        count={7}
+                                        counter={6}
+                                        title = {showMovie === 1 ? 'Best Movies' : 'Best Series'}
                                     />
                                 </animated.div>
                             </div>
-                            <DisplayList data={series.slice(0, 6)} category="Series" />
-                            <DisplayList data={movies.slice(0, 6)} category="Movies" />
+                            <DisplayList data={series.slice(0, 5)} category="Series" />
+                            <DisplayList data={movies.slice(0, 5)} category="Movies" />
                         </div>
                     </>
                 )}
