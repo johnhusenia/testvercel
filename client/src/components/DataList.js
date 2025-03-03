@@ -4,11 +4,13 @@ import DisplayList from './DisplayList';
 import Sidenav from './Sidenav2';
 import Footer from './Footer';
 import View from "./View";
+import DisplayList2 from './DisplayList2';
 
 const DataList = () => {
     const [movies, setMovies] = useState([]);
     const [series, setSeries] = useState([]);
     const [error, setError] = useState(null);
+    const [showMovie, setShowMovie] = useState(true);
 
     useEffect(() => {
 
@@ -27,30 +29,44 @@ const DataList = () => {
         });
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+          setShowMovie((prev) => !prev); // Toggle between movie and series
+        }, 5000); // Change every 5 seconds
+    
+        return () => clearInterval(interval); // Cleanup interval on unmount
+      }, []);
+      
     if (error) {
         return <div>{error}</div>;
     }
 
-    return (
-        <div style={{ display: 'flex',marginTop: '20px' }}>
-          {/* Sidenav */}
-          <Sidenav />
-     
-      
-          {/* Main Content */}
-          <div className="main-content">
-          <View
-                image="fri7.png"
-                title="asdasdsad"
-                description="Testing"
-            />
-          <DisplayList data={series.slice(0, 5)}  category={"Series"} />
-          <DisplayList data={movies.slice(0, 5)}  category={"Movies"} />
 
-          <Footer />
-          </div>
+
+      return (
+        <div style={{ display: 'flex', marginTop: '20px' }}>
+            <Sidenav />
+            <div className="main-content">
+                <View image="fri7.png" title="asdasdsad" description="Testing" />
+                
+                {error ? <div>{error}</div> : (
+                    <>
+                        <div>
+                            {showMovie ? (
+                                <DisplayList2 category="movie" sort="rating" />
+                            ) : (
+                                <DisplayList2 category="series" sort="rating" />
+                            )}
+                        </div>
+                        <DisplayList data={series.slice(0, 5)} category="Series" />
+                        <DisplayList data={movies.slice(0, 5)} category="Movies" />
+                    </>
+                )}
+                <Footer />
+            </div>
         </div>
-      );
+    );
+    
       
 
 };

@@ -2,13 +2,13 @@ import React from "react";
 
 const View = ({ image, title, description }) => {
   return (
-    <div className="advertisement-container">
+    <div className="content-container">
       {image && (
-        <img className="advertisement-image" src={image} alt={title || "Advertisement"} />
+        <img className="content-image" src={image} alt={title || "Content"} />
       )}
-      <div className="advertisement-content">
-        {title && <h2 className="advertisement-title">{title}</h2>}
-        {description && <p className="advertisement-description">{description}</p>}
+      <div className="content-details">
+        {title && <h2 className="content-title">{title}</h2>}
+        {description && <p className="content-description">{description}</p>}
       </div>
     </div>
   );
