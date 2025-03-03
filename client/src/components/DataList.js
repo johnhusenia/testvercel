@@ -35,18 +35,18 @@ const DataList = () => {
         <div style={{ display: 'flex',marginTop: '20px' }}>
           {/* Sidenav */}
           <Sidenav />
-          
+     
       
           {/* Main Content */}
           <div className="main-content">
-
-          <DisplayList data={series.slice(0, 5)}  category={"Series"} />
-          <DisplayList data={movies.slice(0, 5)}  category={"Movies"} />
           <View
                 image="fri7.png"
                 title="asdasdsad"
                 description="Testing"
             />
+          <DisplayList data={series.slice(0, 5)}  category={"Series"} />
+          <DisplayList data={movies.slice(0, 5)}  category={"Movies"} />
+
           <Footer />
           </div>
         </div>
