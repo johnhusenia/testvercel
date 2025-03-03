@@ -27,6 +27,9 @@ const DataDetail = () => {
         return <div>{error}</div>;
     }
 
+    if (!data) {
+        return <div>Loading...</div>;
+    }
 
 
     return (
