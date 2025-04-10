@@ -60,7 +60,7 @@ const GenreList = ({ data, category }) => {
               return (
                 <SwiperSlide key={data._id} className="movie-item genre">
                   <Link
-                    to={`/${category ? `${category}/` : ''}data/${data._id}`}
+                    to={`/api/ : ''}data/${data._id}`}
                     className="movie-link"
                   >
                     <img src={data.posterUrl} alt={data.title} />

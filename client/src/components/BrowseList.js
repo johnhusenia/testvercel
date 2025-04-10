@@ -61,7 +61,7 @@ const BrowseList = () => {
                 </div>
             )}
 
-<View image="https://www.shutterstock.com/image-vector/winter-sale-horizontal-advertising-banner-260nw-536057692.jpg"
+            <View image="https://www.shutterstock.com/image-vector/winter-sale-horizontal-advertising-banner-260nw-536057692.jpg"
                   title="Call Now" description="Paylater and I don't know!" />
                 <Footer />
         </div>

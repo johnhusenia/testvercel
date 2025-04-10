@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "user_id": 101,
+      "user_email": "user1@example.com",
+      "serviceoffer_id": 201,
+      "category": "Report",
+      "status": "Open",
+      "subject": "Login Issue",
+      "description": "Unable to login to the account.",
+      "assigned_admin_id": 301,
+      "created_at": "2023-10-01",
+      "updated_at": "2023-10-02",
+      "comments": [
+        { "comment_id": 1, "admin_id": 301, "message": "Looking into the login issue.", "comment_at": "2023-10-01" },
+        { "comment_id": 2, "admin_id": 301, "message": "Issue resolved.", "comment_at": "2023-10-02" }
+      ]
+    },
+    {
+      "id": 2,
+      "user_id": 101,
+      "user_email": "user1@example.com",
+      "category": "General Ticket",
+      "status": "Open",
+      "subject": "Login Issue",
+      "description": "Unable to login to the account.",
+      "assigned_admin_id": 301,
+      "created_at": "2023-10-01",
+      "updated_at": "2023-10-02",
+      "comments": [
+        { "comment_id": 1, "admin_id": 301, "message": "Looking into the login issue.", "comment_at": "2023-10-01" },
+        { "comment_id": 2, "admin_id": 301, "message": "Issue resolved.", "comment_at": "2023-10-02" }
+      ]
+    },
+    {
+      "id": 3,
+      "user_id": 101,
+      "user_email": "user1@example.com",
+      "category": "Certification",
+      "status": "Open",
+      "subject": "Login Issue",
+      "description": "Unable to login to the account.",
+      "assigned_admin_id": 301,
+      "created_at": "2023-10-01",
+      "updated_at": "2023-10-02",
+      "comments": [
+        { "comment_id": 1, "admin_id": 301, "message": "Looking into the login issue.", "comment_at": "2023-10-01" },
+        { "comment_id": 2, "admin_id": 301, "message": "Issue resolved.", "comment_at": "2023-10-02" }
+      ]
+    }
+  ]
+  

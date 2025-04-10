@@ -11,6 +11,7 @@ const DataDetail = () => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate(); 
+    
 
     useEffect(() => {
         axios.get(`https://testvercel-drab-alpha.vercel.app/api/data/${id}`)

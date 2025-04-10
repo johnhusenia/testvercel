@@ -368,13 +368,15 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1400;  /* Make sure the overlay is behind the popover */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 /* Popup Content Box */
 .popup-content {
@@ -699,7 +701,10 @@ footer {
 
   .popup-content {
     width: 90%;
+    max-width: 400px;  /* Adjust the max-width to a more reasonable size */
+    min-width: 300px;  /* Optional: Set a minimum width */
     padding: 20px;
+    margin: auto;
   }
 
   .related-container {

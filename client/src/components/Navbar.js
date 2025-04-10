@@ -9,7 +9,7 @@ const Navbar = ({ handleTogglePopup,handleToggleRegistrationPopup }) => {
         <button>About</button>
       </Link>
       <Link to="/user">
-        <button>Services</button>
+        <button>Browse</button>
       </Link>
       <Link to="/contact">
         <button>Contact</button>
