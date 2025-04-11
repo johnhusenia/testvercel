@@ -13,7 +13,7 @@ const BrowseList = () => {
     const [tabIndex, setTabIndex] = useState(0); 
 
     useEffect(() => {
-        axios.get('https://testvercel-drab-alpha.vercel.app/api/alldata')
+        axios.get('https://java2backend.onrender.com/api/media/alldata')
             .then(response => {
                 setMovies(response.data);
                 console.log(response.data);

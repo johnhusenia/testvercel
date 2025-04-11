@@ -5,9 +5,10 @@ import React, { useState,useEffect } from 'react';
 import DisplayList from './DisplayList2';
 import { Button } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
-
+  const navigate = useNavigate(); // Initialize navigate function
   const [showPopup, setShowPopup] = useState(false);
   const [showRegistrationPopup, setShowRegistrationPopup] = useState(false);
   const [showMovie, setShowMovie] = useState(true);
@@ -31,6 +32,10 @@ const HomePage = () => {
     setShowPopup(false);
   };
 
+  const handleClick = () => {
+    navigate('/user'); // Navigate to /user when the button is clicked
+  };
+
 
     return( <div className="image-background">
           <LoginPage showPopup={showPopup} togglePopup={handleTogglePopup} />
@@ -51,25 +56,26 @@ const HomePage = () => {
       <h2>Stream now! Pay Later!</h2>
       <p>This is the right time to watch:</p>
       <Button
-  variant="contained"
-  color="primary"
-  size="large"
-  endIcon={<PlayArrowIcon />}
-  sx={{
-    mt: 2,
-    borderRadius: '20px',
-    padding: '10px 30px',
-    fontSize: '1rem',
-    textTransform: 'none',
-    background: 'linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)',
-    boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
-    '&:hover': {
-      background: 'linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%)',
-    },
-  }}
->
-  Start Watching
-</Button>
+      variant="contained"
+      color="primary"
+      size="large"
+      endIcon={<PlayArrowIcon />}
+      sx={{
+        mt: 2,
+        borderRadius: '20px',
+        padding: '10px 30px',
+        fontSize: '1rem',
+        textTransform: 'none',
+        background: 'linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)',
+        boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
+        '&:hover': {
+          background: 'linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%)',
+        },
+      }}
+      onClick={handleClick} // Attach the handleClick function to onClick
+    >
+      Start Watching
+    </Button>
 </div>
       <div>
       {showMovie ? (

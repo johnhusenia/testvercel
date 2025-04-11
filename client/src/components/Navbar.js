@@ -5,13 +5,13 @@ const Navbar = ({ handleTogglePopup,handleToggleRegistrationPopup }) => {
     <div className="top-navbar">
 
       <div className="nav-buttons">
-      <Link to="/about">
+      <Link to="/favorites">
         <button>About</button>
       </Link>
       <Link to="/user">
         <button>Browse</button>
       </Link>
-      <Link to="/contact">
+      <Link to="/favorites">
         <button>Contact</button>
       </Link>
       <button onClick={handleToggleRegistrationPopup}>

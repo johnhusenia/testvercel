@@ -13,7 +13,7 @@ const MovieList = () => {
     const [tabIndex, setTabIndex] = useState(0); 
 
     useEffect(() => {
-        axios.get('https://testvercel-drab-alpha.vercel.app/api/movies')
+        axios.get('https://java2backend.onrender.com/api/media/movies')
             .then(response => {
                 setMovies(response.data);
                 console.log(response.data);

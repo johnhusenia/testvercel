@@ -40,7 +40,7 @@ const MovieDisplay = ({ data, setContent,category }) => {
       <ul className="movie-list">
         {data.map((data, index) => (
             <li key={index} className="movie-item genre">
-            <Link to={`/data/${data._id}`} className="movie-link">
+            <Link to={`/data/${data.id}`} className="movie-link">
                 <img src={data.posterUrl} alt={data.title || 'No title'} />
                 <div className="data-text">
                 <p>{data.title} ({new Date(data.releaseDate).getFullYear()})</p>

@@ -9,7 +9,7 @@ const DisplayList = ({ category, sort }) => {
 
     useEffect(() => {
         // Fetch data from API
-        axios.get('https://testvercel-drab-alpha.vercel.app/api/alldata')
+        axios.get('https://java2backend.onrender.com/api/media/alldata')
             .then(response => {
                 const fetchedData = response.data;
                 
@@ -53,7 +53,7 @@ const DisplayList = ({ category, sort }) => {
             ) : (
               data.slice(0, 3).map((item, index) => (
                 <li key={index} className="data-preview-item">
-                  <Link to={`/data/${item._id}`} className="data-link">
+                  <Link to={`/data/${item.id}`} className="data-link">
                     <Box
                       component="img"
                       src={item.posterUrl}

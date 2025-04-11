@@ -19,7 +19,7 @@ const LoginPage = ({ showPopup, togglePopup }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/auth/login", {
+      const response = await axios.post("https://java2backend.onrender.com/api/auth/login", {
         email: formData.username,
         password: formData.password
       });

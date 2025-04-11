@@ -14,14 +14,15 @@ const DataDetail = () => {
     
 
     useEffect(() => {
-        axios.get(`https://testvercel-drab-alpha.vercel.app/api/data/${id}`)
-            .then(response => {
-                setData(response.data);  
-            })
-            .catch(error => {
-                setError('Failed to load movie details');
-                console.error('Error fetching movie data:', error);
-            });
+      axios
+        .get(`https://java2backend.onrender.com/api/media/item?id=${id}`)
+        .then((response) => {
+          setData(response.data);
+        })
+        .catch((error) => {
+          setError('Failed to load movie details');
+          console.error('Error fetching movie data:', error);
+        });
     }, [id]);
 
     if (error) {

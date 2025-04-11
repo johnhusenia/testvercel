@@ -58,9 +58,9 @@ const GenreList = ({ data, category }) => {
             {contentByGenre[genre].map((data) => {
               console.log(data); // Check the data structure
               return (
-                <SwiperSlide key={data._id} className="movie-item genre">
+                <SwiperSlide key={data.id} className="movie-item genre">
                   <Link
-                    to={`/api/ : ''}data/${data._id}`}
+                    to={`/data/${data.id}`}
                     className="movie-link"
                   >
                     <img src={data.posterUrl} alt={data.title} />

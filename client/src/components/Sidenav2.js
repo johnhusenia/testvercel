@@ -17,7 +17,7 @@ const SidebarNav = () => {
 
         if (email && token) {
             // Fetch user data from the backend
-            fetch(`http://localhost:8080/api/auth/user/email`, {
+            fetch(`https://java2backend.onrender.com/api/auth/user/email`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,

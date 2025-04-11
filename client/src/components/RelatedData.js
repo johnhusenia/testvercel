@@ -11,11 +11,15 @@ const RelatedData = ({ genre }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (genre) {
-      // Fetch related items by genre using axios
+    if (genre && Array.isArray(genre)) {
+      // Create the genres query string like 'genres=Action&genres=Drama'
+      const params = new URLSearchParams();
+      genre.forEach(g => params.append('genres', g));
+  
       axios
-        .get(`https://testvercel-drab-alpha.vercel.app/api/data/genre/${genre}`)
+        .get(`https://java2backend.onrender.com/api/media/genre?${params.toString()}`)
         .then((response) => {
+          console.log("Related Items Response:", response.data); // Print the data
           setRelatedItems(response.data); // Set data in state
         })
         .catch((error) => {
@@ -24,6 +28,8 @@ const RelatedData = ({ genre }) => {
         });
     }
   }, [genre]);
+  
+
 
   if (error) {
     return <div>{error}</div>;
@@ -62,7 +68,7 @@ const RelatedData = ({ genre }) => {
           <SwiperSlide
             key={index}
             className="related-item"
-            onClick={() => handleClick(item._id)}
+            onClick={() => handleClick(item.id)}
             style={{ cursor: 'pointer' }}
           >
             <img src={item.posterUrl} alt={item.title} className="related-img" />

@@ -11,7 +11,7 @@ const DisplayList3 = ({ category, sort, counter, title }) => {
     useEffect(() => {
         // Fetch data from API
         axios
-            .get("https://testvercel-drab-alpha.vercel.app/api/alldata")
+            .get("https://java2backend.onrender.com/api/media/alldata")
             .then((response) => {
                 const fetchedData = response.data;
 
@@ -54,7 +54,7 @@ const DisplayList3 = ({ category, sort, counter, title }) => {
             <ul className="movie-list">
                 {data.slice(0, count).map((movie, index) => (
                     <li key={index} className="movie-item genre">
-                        <Link to={`/data/${movie._id}`} className="movie-link">
+                        <Link to={`/data/${movie.id}`} className="movie-link">
                             <img src={movie.posterUrl} alt={movie.title || "No title"} />
                             <div className="data-text2">
                                 <p>
