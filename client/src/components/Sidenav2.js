@@ -60,8 +60,7 @@ const SidebarNav = () => {
         setUser(null);  // Clear user state
         setAnchorEl(null);  // Close the popover
 
-        // Redirect to home or login page
-        window.location.href = '/';  // Adjust based on your app's routing
+        // Redirect to home or login pag
     };
 
     const openPopover = Boolean(anchorEl);

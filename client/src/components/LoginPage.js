@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";  // React Router v6 uses useNavigate
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginPage = ({ showPopup, togglePopup }) => {
   const [formData, setFormData] = useState({
@@ -10,6 +10,7 @@ const LoginPage = ({ showPopup, togglePopup }) => {
 
   const [message, setMessage] = useState("");
   const navigate = useNavigate();  // Use useNavigate for navigation in React Router v6
+  const location = useLocation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +37,11 @@ const LoginPage = ({ showPopup, togglePopup }) => {
         localStorage.setItem("email", response.data.email); // Save email
   
         // Redirect to /user
-        navigate("/user");
+        if (location.pathname === "/") {
+          navigate("/user", { replace: true });
+        } else {
+          window.location.reload(); // refresh current page
+        }
       } else {
         setMessage("Login succeeded but token missing");
       }
