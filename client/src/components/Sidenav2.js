@@ -60,7 +60,22 @@ const SidebarNav = () => {
         setUser(null);  // Clear user state
         setAnchorEl(null);  // Close the popover
 
-        // Redirect to home or login pag
+        // Redirect to home or login page
+        window.location.href = '/';  // Adjust based on your app's routing
+    };
+
+    const handleLogout2 = () => {
+        // Handle logout logic here (e.g., clearing session, redirecting to login page)
+        console.log("Logging out...");
+
+        // Remove email and token from localStorage
+        localStorage.removeItem("email");
+        localStorage.removeItem("token");
+
+        setUser(null);  // Clear user state
+        setAnchorEl(null);  // Close the popover
+
+        // Redirect to home or login page
     };
 
     const openPopover = Boolean(anchorEl);
@@ -126,7 +141,7 @@ const SidebarNav = () => {
                 onClose={handleClosePopover}
                 email={user ? user.email : ''}
                 name={user ? user.name : ''}
-                onLogout={handleLogout}
+                onLogout={handleLogout2}
             />
         </>
     );

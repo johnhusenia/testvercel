@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -9,8 +9,36 @@ const LoginPage = ({ showPopup, togglePopup }) => {
   });
 
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();  // Use useNavigate for navigation in React Router v6
+  const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    const token = localStorage.getItem("token");
+
+    if (email && token) {
+      fetch(`https://java2backend.onrender.com/api/auth/user/email`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Invalid session");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          console.log("User session valid:", data);
+          navigate("/user", { replace: true });
+        })
+        .catch((err) => {
+          console.warn("No valid session:", err.message);
+        });
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,35 +52,27 @@ const LoginPage = ({ showPopup, togglePopup }) => {
         email: formData.username,
         password: formData.password
       });
-  
-      // Print the entire response object to the console for debugging
+
       console.log("Full response data:", response);
-  
       setMessage(response.data.message);
-  
-      // If login is successful and token is present
+
       if (response.data.message === "Login successful" && response.data.token) {
-        // Save token to localStorage
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("email", response.data.email); // Save email
-  
-        // Redirect to /user
+        localStorage.setItem("email", response.data.email);
+
         if (location.pathname === "/") {
           navigate("/user", { replace: true });
         } else {
-          window.location.reload(); // refresh current page
+          window.location.reload();
         }
       } else {
         setMessage("Login succeeded but token missing");
       }
     } catch (error) {
-      // Print error details
       console.error("Error response:", error.response);
       setMessage(error.response?.data?.error || "Login failed");
     }
   };
-  
-  
 
   return (
     <div>

@@ -8,7 +8,7 @@ const Navbar = ({ handleTogglePopup,handleToggleRegistrationPopup }) => {
       <Link to="/favorites">
         <button>About</button>
       </Link>
-      <Link to="/user">
+      <Link to="/browse">
         <button>Browse</button>
       </Link>
       <Link to="/favorites">
