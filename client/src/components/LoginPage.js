@@ -32,7 +32,12 @@ const LoginPage = ({ showPopup, togglePopup }) => {
         })
         .then((data) => {
           console.log("User session valid:", data);
+          
+        if (location.pathname === "/") {
           navigate("/user", { replace: true });
+        } else {
+          window.location.reload();
+        }
         })
         .catch((err) => {
           console.warn("No valid session:", err.message);
