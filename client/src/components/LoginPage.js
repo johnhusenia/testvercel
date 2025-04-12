@@ -12,36 +12,7 @@ const LoginPage = ({ showPopup, togglePopup }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    const email = localStorage.getItem("email");
-    const token = localStorage.getItem("token");
 
-    if (email && token) {
-      fetch(`https://java2backend.onrender.com/api/auth/user/email`, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Invalid session");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          console.log("User session valid:", data);
-          
-        if (location.pathname === "/") {
-          navigate("/user", { replace: true });
-        } 
-        })
-        .catch((err) => {
-          console.warn("No valid session:", err.message);
-        });
-    }
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
