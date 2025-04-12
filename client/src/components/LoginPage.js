@@ -35,9 +35,7 @@ const LoginPage = ({ showPopup, togglePopup }) => {
           
         if (location.pathname === "/") {
           navigate("/user", { replace: true });
-        } else {
-          window.location.reload();
-        }
+        } 
         })
         .catch((err) => {
           console.warn("No valid session:", err.message);
